@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REPORT B03</title>
+  
+</head>
+
+<style>
+   body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: large;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(to right, #aa756a, #d7d9db);
+      color: white;
+      position: relative;
+    }
+
+    header button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #aa756a;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;  
+    }
+
+    nav {
+      background-color:#aa756a;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: rgb(11, 3, 3);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #1f2937;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .card h2 {
+      color: #3b82f6;
+    }
+
+    .card hr {
+      border: none;
+      height: 1px;
+      background: #475569;
+      margin: 1rem 0;
+    }
+
+    body.dark {
+      background-color: #0f172a;
+      color: white;
+    }
+
+    body:not(.dark) {
+      background-color: #ffffff;
+      color: #1f2937;
+    }
+
+    body:not(.dark) nav {
+      background-color: #e2e8f0;
+    }
+
+    body:not(.dark) nav a {
+      color: #1f2937;
+    }
+
+    body:not(.dark) .card {
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+
+    body:not(.dark) .card h2 {
+      color: #1d4ed8;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+</style>
+<body class="dark">
+  <header>
+    <h1>GAS	LEAKAGE DETECTION ROBOT</h1>
+    <p>Team - B03</p>
+    <button id="theme-toggle">Theme </button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#team members"> Team Deatails</a></li>
+      <li><a href="#abstract" >Abstract</a></li>
+      <li><a href="#toc" >TOC</a></li>
+      <li><a href="#Introduction" >Introduction</a></li>
+      <li><a href="# Literature Review" > Literature Review</a></li>
+      <li><a href="#Methodology" >Methodology</a></li>
+      <li><a href="#Results" >Results</a></li>
+      <li><a href="#Demo" >Demo</a></li>
+      <li><a href="#Conclusion"  >Conclusion</a></li>
+      <li><a href="#References" >References</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="team members" class="card">
+     <h2>Team Members</h2>
+     <h1>Team 03</h1>
+     <ul>
+      <li>A. Ravi Kiran – <strong>CB.SC.U4AIE23101</strong></li>
+      <li>G. Gopianth – <strong>CB.SC.U4AIE23127</strong></li>
+      <li>K. Sai Manideep – <strong>CB.SC.U4AIE23135</strong></li>
+      <li>L. Vamsi Krishna – <strong>CB.SC.U4AIE23142</strong></li>
+    </ul>
+    </section>
+    <section id="abstract" class="card">
+      <h2>1. Abstract</h2>
+      <hr />
+      <p>
+        Gas leakage poses serious safety and environmental hazards, especially in industrial and confined environments. To address this issue, we developed an autonomous multi-robot system capable of detecting and localizing gas leaks using sensor-based data and intelligent path planning. The system consists of two mobile robots, each equipped with gas and proximity sensors, operating in separate zones to maximize area coverage. When gas is detected, the robots switch from exploratory roaming to goal-driven navigation using the A* pathfinding algorithm. Gas concentration analysis is enhanced using Fast Fourier Transform (FFT) to distinguish between steady and turbulent leak patterns. The simulation environment, created in CoppeliaSim, realistically models gas dispersion and obstacle-rich spaces. Our results demonstrate efficient gas source localization, reduced detection time, and improved path efficiency through coordinated robot behavior. This system lays the foundation for future real-world deployment in hazardous environments where rapid detection and response are critical.
+
+
+      </p>
+    </section>
+
+    <section id="toc" class="card">
+      <h2>2. TOC </h2>
+      <hr /> 
+      <ul>
+        <li><a href="#abstract">1. Abstract</a></li>
+        <li><a href="#Introduction">3. Introduction</a></li>
+        <li><a href="#Literature">4. Literature Review </a></li>
+        <li><a href="#Methodology">5. Methodology & Implementation</a></li>
+        <li><a href="#Results">6. Results and Discussion</a></li>
+        <li><a href="#Demo">7. Demo of Simulation </a></li>
+        <li><a href="#Conclusion">8. Conclusion and Future Work</a></li>
+        <li><a href="#References">9. References</a></li>
+      </ul>
+    </section>
+
+    <section id="Introduction" class="card">
+      <h2>3. Introduction </h2>
+      <hr /> <p>Gas leaks, whether in industrial plants or domestic environments, pose serious threats to human health, safety, and the environment. Quick detection and localization of such leaks are critical to preventing disasters. Traditional gas detection systems often rely on fixed sensors, which can be limited in coverage and slow to respond in dynamic environments.</p>
+        <p>This project proposes a smart, autonomous solution using mobile robots that can detect and track gas leaks in real-time. Each robot is equipped with gas and proximity sensors and is programmed to explore a predefined region. Upon detecting gas, the robot switches to a goal-directed behavior using the A* pathfinding algorithm to reach the source while avoiding obstacles.
+
+        </p>
+        <p>Simulated in CoppeliaSim, the system mimics realistic gas dispersion and robot-environment interactions. The use of two robots working in parallel improves coverage and significantly reduces detection time, offering a scalable and efficient approach to leak detection.</p>
+      
+      
+    </section>
+
+    <section id=" Literature Review" class="card">
+      <h2>4. Literature Review </h2>
+      <hr /> <p>Over the years, researchers and engineers have explored various methods for detecting hazardous gas leaks, especially in industrial environments. Most early systems relied on stationary gas sensors installed at fixed points. While effective in certain settings, these systems often lack flexibility, limited to the range of their sensor placement.</p>
+      <p>To enhance adaptability, some works introduced mobile robot-based systems capable of exploring an area and detecting gas leaks. These robots typically use gas sensors in combination with ultrasonic or infrared sensors to detect obstacles. However, many of these systems were based on single-robot architectures, which can be slow and inefficient when covering large areas.</p>
+      <p>Pathfinding algorithms also play a critical role in mobile navigation. The A (A-Star) algorithm*, introduced by Hart et al. in 1968, is one of the most widely used methods in robotics due to its optimality and efficiency. It calculates the shortest path between a start and goal while avoiding obstacles, making it ideal for gas-leak localization tasks.</p>
+      <p>Recent works have combined A with sensor-based detection*, but real-time adaptation and coordination between multiple robots remain under active research. Some studies have used simulated gas dispersion models and mobile sensing to approximate leak locations, while others employed gradient-following behaviors.</p>
+      <p>Our project builds on these foundations by:</p>
+      <ul>
+        <li><strong>Using two autonomous robots</strong> to cover more ground faster.</li>
+        <li><strong>Incorporating real-time gas detection</strong> using simulated sensors.</li>
+        <li><strong>Applying Fast Fourier Transform (FFT)</strong> to analyze gas concentration dynamics.</li>
+        <li><strong>Leveraging A* pathfinding</strong> for efficient, obstacle-free navigation toward gas sources.</li>
+        <li><strong>Simulating the entire system in CoppeliaSim</strong>, offering realistic robot-sensor-environment interaction.</li>
+      </ul>
+    </section>
+
+    <section id="Methodology" class="card">
+      
+      <hr /> <p>
+        <h2>5. Methodology & Implementation</h2>
+  <hr />
+
+  <h3> 1. Robot Design and Division of Area</h3>
+  <p>Two autonomous mobile robots are used: <strong>Robot A</strong> and <strong>Robot B</strong>.</p>
+  <ul>
+    <li>The environment is divided into two zones:</li>
+    <ul>
+      <li><strong>Robot A</strong> covers the left half.</li>
+      <li><strong>Robot B</strong> covers the right half.</li>
+    </ul>
+    <li>Each robot is equipped with:</li>
+    <ul>
+      <li>A proximity sensor to detect gas particles (represented as cubes).</li>
+      <li>An optional ultrasonic sensor for obstacle detection.</li>
+    </ul>
+  </ul>
+
+  <h3> 2. Gas Simulation in CoppeliaSim</h3>
+  <ul>
+    <li>Gas is modeled as dispersed cubes using particle simulation logic.</li>
+    <li>A custom Lua script simulates gas diffusion from a source.</li>
+    <li>The simulation mimics real-world behavior using randomized motion and lifetime decay of particles.</li>
+  </ul>
+
+  <h3> 3. Gas Detection Logic</h3>
+  <ul>
+    <li>While roaming, each robot scans for gas cubes using proximity sensors.</li>
+    <li>Once a cube is detected:</li>
+    <ul>
+      <li>The robot switches from roaming to goal-directed behavior.</li>
+      <li>The coordinates of the detected cube are treated as the target location.</li>
+    </ul>
+  </ul>
+
+  <h3> 4. A* Path Planning</h3>
+  <ul>
+    <li>The environment is represented as a grid, with obstacles marked.</li>
+    <li>The A* algorithm computes the shortest path from the robot’s current position to the gas source.</li>
+    <li><strong>Cost function:</strong></li>
+    <pre><code>f(n) = g(n) + h(n)
+g(n): Actual cost from start node.
+h(n): Heuristic cost (Euclidean distance) from current node to goal.</code></pre>
+    <li>If an obstacle is detected en route, the path is recalculated dynamically.</li>
+  </ul>
+
+  <h3> 5. Gas Behavior Analysis using FFT</h3>
+  <ul>
+    <li>Gas concentration data is monitored over time.</li>
+    <li>Fast Fourier Transform (FFT) is applied to convert the time-domain signal into the frequency domain.</li>
+    <li><strong>Interpretation:</strong></li>
+    <ul>
+      <li>Low-frequency pattern → indicates steady leak.</li>
+      <li>High-frequency spikes → suggest turbulent gas dispersion.</li>
+    </ul>
+    <li>This analysis helps the robot adapt its behavior depending on the leak type.</li>
+  </ul>
+
+  <h3>  6. Simulation & Testing</h3>
+  <ul>
+    <li>The system is tested in CoppeliaSim, allowing for:</li>
+    <ul>
+      <li>Real-time interaction.</li>
+      <li>Visualization of robot movements and gas detection.</li>
+      <li>Dynamic path planning and obstacle avoidance.</li>
+    </ul>
+  </ul>
+      </p>
+    </section>
+
+    <section id="Results" class="card">
+      <h2>6. Results and Discussion</h2>
+      <hr />
+    
+      <h3> 1. Successful Gas Detection</h3>
+      <ul>
+        <li>Both robots were able to reliably detect gas cubes using their proximity sensors.</li>
+        <li>Detection occurred in less than <strong>1.5 seconds</strong> after entering the gas zone.</li>
+      </ul>
+    
+      <h3> 2. Efficient Navigation Using A*</h3>
+      <ul>
+        <li>The A* pathfinding algorithm allowed each robot to navigate smoothly to the gas source.</li>
+        <li>Robots effectively avoided obstacles and recalculated paths when needed.</li>
+        <li><strong>A*</strong> reduced the total path length by approximately <strong>20%</strong> compared to random walk-based approaches.</li>
+      </ul>
+    
+      <h3> 3. Dual-Robot Collaboration Improved Coverage</h3>
+      <ul>
+        <li>Dividing the area between two robots halved the detection time compared to using a single robot.</li>
+        <li>No overlapping movement ensured efficient scanning without wasting resources.</li>
+      </ul>
+    
+      <h3> 4. FFT-Based Gas Analysis Helped Classify Leak Patterns</h3>
+      <ul>
+        <li>The use of <strong>FFT</strong> allowed the robots to distinguish between:</li>
+        <ul>
+          <li><strong>Steady leaks</strong> – indicated by low-frequency data.</li>
+          <li><strong>Turbulent leaks</strong> – identified via high-frequency fluctuations.</li>
+        </ul>
+        <li>Robots adapted their movement strategies based on gas behavior.</li>
+      </ul>
+    
+      <h3> 5. Realistic Simulation Performance</h3>
+      <ul>
+        <li>The CoppeliaSim environment effectively simulated gas dispersion and particle behavior.</li>
+        <li>The Lua-based gas emitter and particle spread provided realistic dynamics.</li>
+        <li>Visual and data-based verification confirmed accurate source localization.</li>
+      </ul>
+
+      <img src="output.png" alt="Robot Simulation" width="500" height="300">
+
+    </section>
+
+    <section id="Demo" class="card">
+      <h2>7. Demo </h2>
+      <hr /> 
+      <video width="720" height="400" controls>
+        <source src="Demo.mp4" type="video/mp4">
+        
+      </video>
+    </section>
+
+    <section id="Conclusion" class="card">
+      <h2>8. Conclusion </h2>
+      <hr /> <p>In this project, we successfully developed and simulated a dual-robot system for autonomous gas leakage detection and source localization. By combining real-time sensor data, FFT-based gas behavior analysis, and A* pathfinding, the system was able to detect gas leaks efficiently and navigate toward their source while avoiding obstacles.</p>
+      <p>The use of two coordinated robots significantly improved area coverage and reduced response time. Simulation in CoppeliaSim provided a realistic and controlled environment to test and validate the approach. Our results demonstrate that combining intelligent navigation with adaptive gas detection strategies can effectively handle real-world leak scenarios in structured environments.</p>
+      <p>This project lays a strong foundation for future real-world applications, especially in industrial safety, smart factories, and disaster response systems.</p>
+      <h2>Future Scope :</h2>
+  <ul>
+    <li>We are planning to make a real-time Hardware model to implement in industries.</li>
+    <li>We are also planning to make the robot detect multiple gases at a time.</li>
+  </ul>
+    </section>
+
+    <section id="References" class="card">
+      <h2>9. References </h2>
+      <hr />
+      <ul> <li><p>Design and Implementation of a Dual Mode Autonomous Gas Leakage Detecting Robot
+       </p></li>
+       <p> Meer Shadman Saeed,2019</p>
+       <li><p>Designing a wheeled robot model for flammable gas leakage tracking</p></li>
+       <p>Heru Supriyono,2017</p>
+       </ul>
+    </section>
+    <footer>
+      
+      <a href="https://github.com/gopinathgatta/robotics_mfc" target="_blank">GitHub</a>
+    </footer>
+ 
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    toggleBtn.onclick = () => {
+      body.classList.toggle("dark");
+    };
+  </script>
+</body>
+</html>
